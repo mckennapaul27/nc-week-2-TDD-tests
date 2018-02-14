@@ -1,13 +1,20 @@
-var desserts = ['cake', 'ice cream', 'cookies', 'cake', 'ice cream', 'cake', 'cake', 'cake', 'ice cream', 'brownie', 'plums', 'cheese and wine', 'apple pie'];
+var nestedArr = [
+    [1, 2, 3],
+    5,
+    'foo',
+    [7, 8, 8, 'cat'],
+    [4, 5, 6],
+    false
+];
 
-var puds = desserts.reduce(function (acc, choice) {
-    if (!acc[choice]) {
-        acc[choice] = acc[choice] = 1;
+var flatArr = nestedArr.reduce(function(acc, elem) {
+    if (Array.isArray(elem)) {
+        acc = acc.concat(elem);
     } else {
-        acc[choice] += 1;
-    }    
+        acc.push(elem);
+    }
     return acc;
-}, {});
+}, []);
 
-console.log(puds);
+console.log(flatArr);
 
