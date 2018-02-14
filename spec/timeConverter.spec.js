@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const timeConverter = require('../timeConverter');
 
-describe.only('timeconverter', function () {
+describe('timeconverter', function () {
     it('converts time strings like 00:XX into 12.XXam', function () {
         expect(timeConverter('00:23')).to.equal('12:23am');
     });
